@@ -77,13 +77,14 @@ void setup()
   }
   else
   {
-    Serial.println("ikeaSerial successfully initialized 9600");
+    Serial.println("+++ UART2 to IKEA sensor initialized");
   }
 
   /********************** Setup  Bluetooth Connection ****************/
   ESP_BT.begin(BT_NAME); //Name of your Bluetooth interface -> will show up on your phone
-  Serial.print("Bluetooth initialized as ");
-  Serial.println(BT_NAME);
+  Serial.print("+++ Bluetooth initialized as *** ");
+  Serial.print(BT_NAME);
+  Serial.println(" ***");
 
 
   clearRxBuf();  
