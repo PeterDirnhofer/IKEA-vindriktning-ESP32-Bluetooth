@@ -1,11 +1,51 @@
-# IKEA-Feinstaubsensor Vintrikning mit ESP32 per Bluetooth abfragen
+# IKEA-Feinstaubsensor Vindrikning mit ESP32 per Bluetooth auf Smartphone anzeigen
 IKEA bietet den Feistaubsensor VINDRIKTNING an
 https://www.ikea.com/de/de/p/vindriktning-luftqualitaetssensor-70498242/     
 Der Sensor misst die Luftqualität und zeigt sie mit einer dreifarbigen LED Leiste an.
 
-Die Idee basiert auf den Artikeln von heise.de   
-https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html      
-und dem Github Beitrag von Hypfer    https://www.ikea.com/de/de/p/vindriktning-luftqualitaetssensor-70498242/ 
+Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Sensor abzugreifen und auf einem Mobiltelefon darzustellen finden sich im Beitrag von **heise**    
+https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html
 
-Ein ESP32 wird verwendet um die die Messdaten des Sensors seriell abzugreifen. Der ESP32 sendet die Daten über Bluetooth an ein Android Mobiltelefon.   
-Auf dem Telefon werden die Daten entweder mit der Bluetooth Terminal App als Zahlenwerte oder mit einer mit Hilfe des MIT App Inventor erzeugten App grafisch dargestellt. 
+
+---
+## Konzept
+
+Ein ESP32 liest die Daten des Sensors über die serielle Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert. Der Messwert wird als Zahl per Bluetooth an das Handy gesendet.
+
+Im Folgenden git es zwei Möglichkeiten, die Messwerte auf einem Android Smartphone darzustellen:
+
+**Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte    
+**IKEA Vindriktning Monitor** zeigt die Messwerte in einer einfachen Grafik
+
+---
+
+## Hardware
+Der IKEA Sensor wird an die Serielle Schnittstelle des ESP32 angeschlossen.   
+So geht's: link   
+
+-----
+
+## ESP32 Software
+Die Arduino basierte Software für den ESP32 findet sich unter xxxx.ino
+
+---
+
+## Handy Software: Serial Bluetooth Terminal
+Die App kann aus dem Play Store geladen werden. Suche nach "serial bluetooth terminal"
+
+---
+
+## Handy Software: IKEA Vindriktning Monitor auf das Handy laden
+Die App wurde mit dem **MIT App Inventor** erzeugt. Sie kann einfach auf das Telefon geladen werden.   
+Die fertige App herunterladen. So geht's: link
+
+## Handy Software: IKEA Vindriktning Monitor mit MIT APP Inventor bearbeiten
+
+Es gibt aber auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
+
+Eine schöne Einführung in den App Inventor gibt es unter https://youtu.be/aM2ktMKAunw   
+Die App als apk Datei liegt auf link
+
+
+
+
