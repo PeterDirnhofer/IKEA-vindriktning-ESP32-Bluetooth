@@ -11,11 +11,14 @@ Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Senso
 
 ## Konzept
 
-Ein ESP32 liest die Daten des Sensors über die serielle Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert. Der Messwert wird als Zahl per Bluetooth an das Handy gesendet.
+Der IKEA Vindrikting Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. Das Serielle Signal aus dem Sensor (5 Volt) wird per Spannungsteiler an den ESP32 Eingang (verträgt nur 3.3 Volt) angepasst.
 
-Im Folgenden git es zwei Möglichkeiten, die Messwerte auf einem Android Smartphone darzustellen:  
+Der ESP32 empfängt die Daten des Sensors über seine serielle Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
+
+Der ESP32 sendet den Messwert als Zahl per Bluetooth an das Handy.
+
+Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:  
 **Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte  
-
 **IKEA Vindriktning Monitor** zeigt die Messwerte in einer einfachen Grafik
 
 ---
@@ -35,14 +38,13 @@ Die Arduino basierte Software für den ESP32 findet sich unter [ESP32 Arduino](h
 
 ## Handy Software: Serial Bluetooth Terminal
 
-Die App kann aus dem Play Store geladen werden. Suche nach "serial bluetooth terminal"
+Die App kann aus dem Google Play Store geladen werden. Suche nach "serial bluetooth terminal"
 
 ---
 
 ## Handy Software: IKEA Vindriktning Monitor auf das Handy laden
 
-Die App wurde mit dem **MIT App Inventor** erzeugt. Sie kann einfach auf das Telefon geladen werden.  
-Die App als am Handy ausführbare herunterladen: [ESP32BluetoothApp.apk](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.apk)
+Die App herunterladen von [ESP32BluetoothApp.apk](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.apk) und auf dem Handy installieren.
 
 
 ## Handy Software: IKEA Vindriktning Monitor mit MIT APP Inventor bearbeiten
