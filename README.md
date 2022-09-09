@@ -42,12 +42,15 @@ Die App kann aus dem Play Store geladen werden. Suche nach "serial bluetooth ter
 ## Handy Software: IKEA Vindriktning Monitor auf das Handy laden
 
 Die App wurde mit dem **MIT App Inventor** erzeugt. Sie kann einfach auf das Telefon geladen werden.  
-Die fertige App herunterladen. So geht's: link
+Die App als am Handy ausführbare herunterladen: [ESP32BluetoothApp.apk](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.apk)
+
 
 ## Handy Software: IKEA Vindriktning Monitor mit MIT APP Inventor bearbeiten
 
 Es gibt aber auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
-Eine schöne Einführung in den App Inventor gibt es unter [Youtube App Inventor Tutorial
+Eine schöne Einführung in den **MIT App Inventor** gibt es unter [Youtube App Inventor Tutorial
 ](https://youtu.be/aM2ktMKAunw)  
-Die App als apk Datei liegt auf link
+Die App als mit dem **MIT App Inventor** bearbeitbare **aia** Datei liegt auf [ESP32BluetoothApp.
+aia](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.aia)
+
