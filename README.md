@@ -3,7 +3,7 @@
 IKEA bietet den Feistaubsensor VINDRIKTNING an
 [IKEA vindriktning](https://www.ikea.com/de/de/p/vindriktning-luftqualitaetssensor-70498242/)
 
-Der Sensor misst die Luftqualität und zeigt sie mit einer dreifarbigen LED Leiste an.  
+Der Sensor misst den Feinstaub in der Luft und zeigt die Konzentration mit einer dreifarbigen LED Leiste an.  
 
 Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Sensor abzugreifen und auf einem Mobiltelefon darzustellen finden sich im Beitrag von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html)
 
@@ -13,7 +13,7 @@ Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Senso
 
 Der IKEA Vindrikting Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. Das Serielle Signal aus dem Sensor (5 Volt) wird per Spannungsteiler an den ESP32 Eingang (verträgt nur 3.3 Volt) angepasst.
 
-Der ESP32 empfängt die Daten des Sensors über seine serielle Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
+Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 
 Der ESP32 sendet den Messwert als Zahl per Bluetooth an das Handy.
 
