@@ -1,6 +1,6 @@
 /*****************************************************************
   Story:
-  ESP32 reads IKEA Feinstaubsensor VINTRIKNING
+  ESP32 reads IKEA Feinstaubsensor VINDRIKNING
   via ESP32 UART2 serial interface
 
   Data can be monitored on Arduino's Serial Monitor with 115200 Baud
