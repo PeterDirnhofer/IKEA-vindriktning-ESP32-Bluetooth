@@ -135,7 +135,10 @@ void loop()
     Serial.println();
 
     // Send data via Bluetooth as String
-    ESP_BT.println(String(ikeaValue));
+    // with leading #
+    String sendString="#";
+    sendString.concat(String(ikeaValue));
+    ESP_BT.println(sendString);
 
     // For information only:
     // Uncomment, if you want to display one line with complete sensor raw-data from IKEA sensor in Serial Monitor
