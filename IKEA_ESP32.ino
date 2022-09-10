@@ -5,18 +5,17 @@
   Story:
   ESP32 reads IKEA Feinstaubsensor VINDRIKNING
   via ESP32 UART2 serial interface
-
   Data can be monitored on Arduino's Serial Monitor with 115200 Baud
-
-  Data are sent additionally over Bluetooth and can be monitored on a Android phone using XXXXX
-  
-  
+  Data are sent additionally over Bluetooth and can be monitored on a Android phone
+   
 
   Code is based on
   https://github.com/Hypfer/esp8266-vindriktning-particle-sensor
 
   Peter Dirnhofer September 2022
 
+  Optional IKEA sensor data can be displayed on a Android Phone
+  ***********************************************************************
   Details:
   Communication betwenn IKEA sensor an ESP32
   ESP32 uses UART2 for serial communication. Name 'ìkeaSerial'
@@ -27,11 +26,11 @@
 
   A nice explanition how to use ESP32 UART2: https://youtu.be/GwShqW39jlE
 
-  Optional IKEA sensor data can be displayed on a Android Phone
-  ESP32 provides measured data to Bluetooth
+  ***********************************************************************
+  Adittionally ESP32 sends measured data via Bluetooth
   To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
 
-  Your mobile can display sensor data using the App on 
+  Your mobile can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
 
 ************************************************************************************************/
