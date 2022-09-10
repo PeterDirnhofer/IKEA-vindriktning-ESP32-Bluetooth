@@ -5,13 +5,16 @@ IKEA bietet den Feistaubsensor VINDRIKTNING an
 
 Der Sensor misst den Feinstaub in der Luft und zeigt die Konzentration mit einer dreifarbigen LED Leiste an.  
 
-Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Sensor abzugreifen und auf einem Mobiltelefon darzustellen finden sich im Beitrag von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html)
+Eine Beschreibung des Ikea Sensors, sowie die Idee, die Messdaten vom Ikea-Sensor abzugreifen und auf einem Mobiltelefon darzustellen basieren auf den Beiträgen von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html) und [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor).
+
+Zusätzlich wird die Bluetooth Kommunikation zwischen dem ESP32 und einem Android Smartphone beschrieben. Die Messdaten können auf dem Smartphone mit einer Standard App als Zahlen dargestellt werden.  
+Alternativ kann eine mit dem MIT App Inventor erstellte App genutzt oder auch angepasst werden, die die Daten in einer einfachen Grafik darstellt.
 
 ---
 
 ## Konzept
 
-Der IKEA Vindrikting Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. Das Serielle Signal aus dem Sensor (5 Volt) wird per Spannungsteiler an den ESP32 Eingang (verträgt nur 3.3 Volt) angepasst.
+Der IKEA Vindrikting Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. (Spannungsanpassung des seriellen Signals, siehe unten).
 
 Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 
@@ -26,7 +29,8 @@ Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:
 ## Hardware
 
 Der IKEA Sensor wird an die Serielle Schnittstelle des ESP32 angeschlossen.  
-So geht's: link  
+So geht's: [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html).  
+Es empfiehlt sich, den Pegel des seriellen Ikea Aushanssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
 
 ---
 
