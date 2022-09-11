@@ -49,16 +49,16 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit anderen Nutzer\*innen zu v
 
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Suche nach "serial bluetooth terminal"
 
----
-
 ## Handy Software 2: 'IKEA VIND Monitor' - Grafik
-
 Installation auf dem Handy. So gehts:  
-Den Link auf die apk ins Handy kopieren (z.B. per Messenger ans Handy schicken) und am Handy anklicken. Damit startet die Installation.  
-Hier ist der Link auf die apk:  
+Den Link auf die apk ins Handy kopieren (z.B. per Messenger ans Handy schicken) und am Handy anklicken. Damit startet die Installation.
+
+Diesen Link ins Handy kopieren:  
 https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk
 
-## Handy Software: 'IKEA VIND Monitor' mit dem 'MIT APP Inventor' bearbeiten
+---
+
+## Handy Software 2: 'IKEA VIND Monitor' mit dem 'MIT APP Inventor' bearbeiten
 
 Es gibt auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
