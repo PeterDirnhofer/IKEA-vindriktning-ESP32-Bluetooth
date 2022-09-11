@@ -6,37 +6,52 @@
   ESP32 reads IKEA Feinstaubsensor VINDRIKNING
   via ESP32 UART2 serial interface
   Data can be monitored on Arduino's Serial Monitor with 115200 Baud
-  Data are sent additionally over Bluetooth and can be monitored on a Android phone
+
+  Additionally, data are sent over Bluetooth and can be monitored on a Android phone
    
 
   Code is based on
   https://github.com/Hypfer/esp8266-vindriktning-particle-sensor
 
-  Peter Dirnhofer September 2022
-
-  Optional IKEA sensor data can be displayed on a Android Phone
+  
   ***********************************************************************
   Details:
   Communication betwenn IKEA sensor an ESP32
-  ESP32 uses UART2 for serial communication. Name 'ìkeaSerial'
+  ESP32 uses UART2 for serial communication. Class name 'ìkeaSerial'
   - 9600 Baud
   - 3.3 Volt on ESP side, 5 Volt on IKEA sensor side. Voltage divider need to protect ESP32 input !!!
   - GPIO16=RX2 to receive data
-  - PIO17=TX2  Transmission Tx is not used as no data to be sent to IKEA sensor
+  - PIO17=TX2  Transmission Tx. Info: Tx2 is not used as no data to be sent to IKEA sensor
 
   A nice explanition how to use ESP32 UART2: https://youtu.be/GwShqW39jlE
 
+  
   ***********************************************************************
+<<<<<<< HEAD
   Additionally ESP32 sends measured data via Bluetooth
+||||||| parent of 0fc05c8 (ino comments updated)
+  Adittionally ESP32 sends measured data via Bluetooth
+=======
+  How to diplay Bluetooth data on your Android Phone:
+>>>>>>> 0fc05c8 (ino comments updated)
   To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
 
-  Your mobile can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
+  Your phone can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
+  Optionally, you can edit ESPBluetoothApp using the MIT App Inventor.
 
 ************************************************************************************************/
 
 
+/***********************************************************************************************/
+/* IF YOU WORK IN A GROUP, CHANGE BT_NAME INDIVIDUALLY TO AVOID CONFLICTS ON BLUETOOTH*/
+
 #define BT_NAME "IKEA_BT_001"  // Individual devicename of ESP32 Bluetooth
+
+/**********************************************************************************************/
+
+
+
 #define LED_BUILTIN 2          // Blue LED on ESP to indicate: ESP gets data from IKEA sensor
 
 // *******************************************************************
