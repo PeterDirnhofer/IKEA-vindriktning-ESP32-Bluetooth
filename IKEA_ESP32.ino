@@ -33,6 +33,7 @@
   Your phone can also display sensor data in a simple graphic using the IKEA_VIND_Monitor. You find it under
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
   Optionally, you can edit ESPBluetoothApp using the MIT App Inventor.
+#define BT_NAME "IKEA_BT_001"  // Individual devicename of ESP32 Bluetooth
 
 ************************************************************************************************/
 
@@ -41,6 +42,9 @@
 /* IF YOU WORK IN A GROUP, CHANGE BT_NAME INDIVIDUALLY TO AVOID CONFLICTS ON BLUETOOTH*/
 
 #define BT_NAME "IKEA_BT_001"  // Individual devicename of ESP32 Bluetooth
+//#define BT_NAME "IKEA_BT_002"  // Individual devicename of ESP32 Bluetooth
+//#define BT_NAME "IKEA_BT_003"  // Individual devicename of ESP32 Bluetooth
+
 
 /**********************************************************************************************/
 
