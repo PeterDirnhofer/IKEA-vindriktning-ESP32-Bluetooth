@@ -1,4 +1,4 @@
-# IKEA-Feinstaubsensor Vindrikning mit ESP32 per Bluetooth auf Smartphone anzeigen
+# IKEA-Feinstaubsensor Vindriktning mit ESP32 per Bluetooth auf Smartphone anzeigen
 
 IKEA bietet den Feistaubsensor VINDRIKTNING an
 [IKEA vindriktning](https://www.ikea.com/de/de/p/vindriktning-luftqualitaetssensor-70498242/)
