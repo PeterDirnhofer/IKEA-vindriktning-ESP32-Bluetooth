@@ -45,26 +45,27 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit anderen Nutzer\*innen zu v
 
 ---
 
-## Handy Software 1: 'Serial Bluetooth Terminal' - Zahlendarstellung
+## Handy Software: 'Serial Bluetooth Terminal' - Zahlendarstellung
 
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"
 
 ---
 
-## Handy Software 2: 'IKEA VIND Monitor' - Grafik
+## Handy Grafik-App: 'IKEA VIND Monitor.apk' installieren
+
 Installation auf dem Handy. So gehts:  
 Den Link auf die apk im Handy anklicken. Damit startet die Installation.  
 
-Hinweis: Der Link kann bei Bedarf einfach vom PC aufs Handy kopiert werden z.B. mit dem messenger. 
+Hinweis: Der Link kann bei Bedarf einfach vom PC aufs Handy kopiert werden z.B. mit dem messenger.
 
 Hier ist der Link zum starten der Installation auf dem Handy:
-https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk
+<https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk>
 
 ---
 
-## Handy Software 2: 'IKEA VIND Monitor' mit dem 'MIT APP Inventor' bearbeiten
+## Handy Grafik-App: 'IKEA VIND Monitor.aia' bearbeiten
 
-Es gibt auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
+Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
 Eine schöne Einführung in den **MIT App Inventor** gibt es unter [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)  
 Hinweis: Bei mir hat die Registrierung beim 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
