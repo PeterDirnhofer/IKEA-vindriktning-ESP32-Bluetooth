@@ -30,7 +30,10 @@ Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:
 ## Hardware
 
 Der IKEA Sensor wird an die Serielle Schnittstelle des ESP32 angeschlossen.  
-So geht's: [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html).  
+So geht's: 
+
+#FOTO EINFÜGEN
+
 Es empfiehlt sich, den Pegel des seriellen Ikea Ausganssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
 
 ---
