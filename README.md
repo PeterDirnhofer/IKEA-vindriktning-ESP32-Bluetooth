@@ -67,11 +67,11 @@ Hier ist der Link zum starten der Installation auf dem Handy:
 
 Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
-Eine schöne Einführung in den **MIT App Inventor** gibt es unter  
+Eine schöne Einführung in den **MIT App Inventor** und die Installation gibt es unter  
 [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw) 
 
 
-Hinweis: Bei mir hat die Registrierung beim 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
+Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
 
 ---
 
