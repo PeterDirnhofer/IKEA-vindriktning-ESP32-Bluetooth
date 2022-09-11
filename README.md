@@ -68,8 +68,7 @@ Hier ist der Link zum starten der Installation auf dem Handy:
 Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
 Eine schöne Einführung in den **MIT App Inventor** und die Installation gibt es unter  
-[App Inventor Tutorial](https://youtu.be/aM2ktMKAunw) 
-
+[App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)
 
 Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
 
@@ -86,6 +85,6 @@ Download ZIP repository von
 
 ## Testumgebung: Stimulation des Sensors mit einer Kerze
 
-Um beim Experimentieren den Sensor zu stimulieren kann man Zigarettenrauch vewenden. Es geht aber auch ohne Zigaretten: Der Rauch einer gerade ausgeblasenen Kerze in der Nähe treibt den Sensor locker in den roten Bereich und die Messwerte fallen dann langsam wieder ab (in ein, zwei Minuten)
+Um beim Experimentieren den Sensor zu stimulieren kann man Zigarettenrauch vewenden. Es geht aber auch ohne Zigaretten: Der Rauch einer gerade ausgeblasenen Kerze in der Nähe treibt den Sensor locker in den roten Bereich und die Messwerte fallen dann langsam in ein, zwei Minuten wieder ab.
 
 Bei den Versuchen ist auch etwas Geduld gefragt. Der Sensor schickt nur alle paar Sekunden Messdaten und dann gleich mehrere Pakete nacheinander. Die blaue LED am ESP32 zeigt an, wenn der ESP gerade Messdaten vom Sensor empfängt.
