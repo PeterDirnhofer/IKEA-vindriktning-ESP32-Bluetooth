@@ -75,7 +75,7 @@ Hinweis: Bei mir hat die Registrierung beim 'MIT App Inventor' nur mit dem Googl
 
 ---
 
-### IKEA VIND Monitor.aia in MIT APP inventor importieren
+### IKEA VIND Monitor.aia in 'MIT APP inventor' importieren
 
 Um die aia Datei zu laden wird zunächst das komplette Github Repository als zip runtergeladen und danach auf das lokale Laufwerk entpackt. Dazu in Github 'Code' und 'Download ZIP' klicken und anschliessend den Download auf das lokale Laufwerk unzippen.  
 
