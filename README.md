@@ -83,3 +83,9 @@ Die unzipped Datei 'IKEA_VIND_Monitor.aia' kann dann in de **MIT APP Inventor** 
 
 Download ZIP repository von  
 [GitHub Repository](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth.git)
+
+## Testumgebung: Stimulation des Sensors mit einer Kerze
+
+Um beim Experimentieren den Sensor zu stimulieren kann man Zigarettenrauch vewenden. Es geht aber auch ohne Zigaretten: Der Rauch einer gerade ausgeblasenen Kerze in der Nähe treibt den Sensor locker in den roten Bereich und die Messwerte fallen dann langsam wieder ab (in ein, zwei Minuten)
+
+Bei den Versuchen ist auch etwas Geduld gefragt. Der Sensor schickt nur alle paar Sekunden Messdaten und dann gleich mehrere Pakete nacheinander. Die blaue LED am ESP32 zeigt an, wenn der ESP gerade Messdaten vom Sensor empfängt.
