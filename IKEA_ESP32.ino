@@ -30,7 +30,7 @@
   Additionally ESP32 sends measured data via Bluetooth
   To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
 
-  Your phone can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
+  Your phone can also display sensor data in a simple graphic using the IKEA_VIND_Monitor. You find it under
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
   Optionally, you can edit ESPBluetoothApp using the MIT App Inventor.
 
