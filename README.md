@@ -37,9 +37,11 @@ Es empfiehlt sich, den Pegel des seriellen Ikea Ausganssignals (5 Volt) and den 
 
 ## ESP32 Software
 
-Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)  
-Hinweis: Um in Arbeitsgruppen Konflikte mit anderen Nutzer*innen zu vermeiden, im Programm die Bluetooth Adresse 'BT_NAME' individuell anpassen in  
-``#define BT_NAME "IKEA_BT_001``
+Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+
+Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit anderen Nutzer\*innen zu vermeiden, in 'IKEA_ESP.ino' die Bluetooth-ID 'BT_NAME' individuell  pro Nutzer\*in ändern.  
+``#define BT_NAME "IKEA_BT_001"``  
+``#define BT_NAME "IKEA_BT_002"`` usw.
 
 ---
 
