@@ -41,6 +41,8 @@ ESP Rx2 mit IKEA Tx (Über einen Spannungsteiler)
 
 Es empfiehlt sich, den Pegel des seriellen IKEA Ausganssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
 
+
+
 ---
 
 ## ESP32 Software
