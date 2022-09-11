@@ -48,7 +48,9 @@ Die App kann aus dem Google Play Store geladen werden. Suche nach "serial blueto
 
 ## Handy Software 2: 'IKEA VIND Monitor'
 
-Die App herunterladen von [IKEA_VIND_Monitor.apk](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk) und auf dem Handy installieren.
+Die App herunterladen von [IKEA_VIND_Monitor.apk](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk) und auf dem Handy installieren.   
+So gehts: Diesen Link ins Handy kopieren und anklicken. Damit startet die Installation.   
+https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk
 
 ## Handy Software: 'IKEA VIND Monitor' mit MIT dem APP Inventor bearbeiten
 
