@@ -27,13 +27,7 @@
 
   
   ***********************************************************************
-<<<<<<< HEAD
   Additionally ESP32 sends measured data via Bluetooth
-||||||| parent of 0fc05c8 (ino comments updated)
-  Adittionally ESP32 sends measured data via Bluetooth
-=======
-  How to diplay Bluetooth data on your Android Phone:
->>>>>>> 0fc05c8 (ino comments updated)
   To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
 
   Your phone can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
