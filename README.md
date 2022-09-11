@@ -47,13 +47,17 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit anderen Nutzer\*innen zu v
 
 ## Handy Software 1: 'Serial Bluetooth Terminal' - Zahlendarstellung
 
-Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Suche nach "serial bluetooth terminal"
+Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"
+
+---
 
 ## Handy Software 2: 'IKEA VIND Monitor' - Grafik
 Installation auf dem Handy. So gehts:  
-Den Link auf die apk ins Handy kopieren (z.B. per Messenger ans Handy schicken) und am Handy anklicken. Damit startet die Installation.
+Den Link auf die apk im Handy anklicken. Damit startet die Installation.  
 
-Diesen Link ins Handy kopieren:  
+Hinweis: Der Link kann bei Bedarf einfach vom PC aufs Handy kopiert werden z.B. mit dem messenger. 
+
+Hier ist der Link zum starten der Installation auf dem Handy:
 https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk
 
 ---
@@ -63,4 +67,7 @@ https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IK
 Es gibt auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
 Eine schöne Einführung in den **MIT App Inventor** gibt es unter [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)  
-Die App als mit dem **MIT App Inventor** bearbeitbare **aia** Datei liegt auf [IKEA_VIND_Monitor.aia](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.aia)
+Hinweis: Bei mir hat die Registrierung beim 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
+
+Sobald der **MIT App Inventor** installiert ist, wird die bearbeitbare **aia** Datei importiert und kann bearbeitet werden.  
+Import von [IKEA_VIND_Monitor.aia](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.aia)
