@@ -27,7 +27,7 @@
   A nice explanition how to use ESP32 UART2: https://youtu.be/GwShqW39jlE
 
   ***********************************************************************
-  Adittionally ESP32 sends measured data via Bluetooth
+  Additionally ESP32 sends measured data via Bluetooth
   To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
 
   Your mobile can also display sensor data in a simple graphic using the ESP32BluetoothApp. You find it under
