@@ -37,7 +37,9 @@ Es empfiehlt sich, den Pegel des seriellen Ikea Ausganssignals (5 Volt) and den 
 
 ## ESP32 Software
 
-Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)  
+Hinweis: Um in Arbeitsgruppen Konflikte mit anderen Nutzer*innen zu vermeiden, im Programm die Bluetooth Adresse 'BT_NAME' individuell anpassen in  
+``#define BT_NAME "IKEA_BT_001``
 
 ---
 
@@ -51,10 +53,10 @@ Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werde
 
 Installation auf dem Handy. So gehts:  
 Den Link auf die apk ins Handy kopieren (z.B. per Messenger ans Handy schicken) und am Handy anklicken. Damit startet die Installation.  
-Link auf die apk:  
+Hier ist der Link auf die apk:  
 https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk
 
-## Handy Software: 'IKEA VIND Monitor' mit MIT dem APP Inventor bearbeiten
+## Handy Software: 'IKEA VIND Monitor' mit dem 'MIT APP Inventor' bearbeiten
 
 Es gibt auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
