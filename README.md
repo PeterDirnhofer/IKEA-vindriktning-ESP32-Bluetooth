@@ -22,7 +22,7 @@ Der ESP32 sendet den Messwert als Zahl per Bluetooth an das Handy.
 
 Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:  
 **Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte  
-**IKEA Vindriktning Monitor** Android App zeigt die Messwerte in einer einfachen Grafik
+**IKEA VIND Monitor** Android App zeigt die Messwerte in einer einfachen Grafik
 
 ---
 
@@ -48,7 +48,7 @@ Die App kann aus dem Google Play Store geladen werden. Suche nach "serial blueto
 
 ## Handy Software 2: 'IKEA Vindriktning Monitor'
 
-Die App herunterladen von [ESP32BluetoothApp.apk](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.apk) und auf dem Handy installieren.
+Die App herunterladen von [IKEA_VIND_Monitor.apk](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk) und auf dem Handy installieren.
 
 ## Handy Software: IKEA Vindriktning Monitor mit MIT APP Inventor bearbeiten
 
@@ -56,5 +56,4 @@ Es gibt aber auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bear
 
 Eine schöne Einführung in den **MIT App Inventor** gibt es unter [Youtube App Inventor Tutorial
 ](https://youtu.be/aM2ktMKAunw)  
-Die App als mit dem **MIT App Inventor** bearbeitbare **aia** Datei liegt auf [ESP32BluetoothApp.
-aia](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/ESP32BluetoothApp.aia)
+Die App als mit dem **MIT App Inventor** bearbeitbare **aia** Datei liegt auf [IKEA_VIND_Monitor.aia](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.aia)
