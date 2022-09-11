@@ -5,7 +5,7 @@ IKEA bietet den Feinstaubsensor VINDRIKTNING an
 
 Der Sensor misst den Feinstaub in der Luft und zeigt die Konzentration mit einer dreifarbigen LED Leiste an.  
 
-Die Artikel von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html) und [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor) beschreiben die Funktion des Ikea Sensors sowie die Methode, wie die Messdaten über die Serielle Schnittstelle abgegriffen werden können. Sie dienen als Grundlage dieses Beitrags.
+Die Artikel von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindriktning-zum-IoT-Device-aufbohren-6164149.html) und [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor) beschreiben die Funktion des Ikea Sensors sowie die Methode, wie die Messdaten über die Serielle Schnittstelle abgegriffen werden können. Sie dienen als Grundlage für diesen Beitrags.
 
 In dem Beitrag hier wird zusätzlich die Bluetooth Kommunikation zwischen dem ESP32 und einem Android Smartphone beschrieben. Die Messdaten können auf dem Smartphone mit einer Standard App als Zahlen dargestellt werden.  
 Alternativ kann eine mit dem MIT App Inventor erstellte App genutzt oder auch angepasst werden, die die Daten in einer einfachen Grafik darstellt.
