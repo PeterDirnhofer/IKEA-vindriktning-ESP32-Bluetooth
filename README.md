@@ -22,7 +22,7 @@ Der ESP32 sendet den Messwert als Zahl per Bluetooth an das Handy.
 
 Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:  
 **Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte  
-**IKEA Vindriktning Monitor** zeigt die Messwerte in einer einfachen Grafik
+**IKEA Vindriktning Monitor** Android App zeigt die Messwerte in einer einfachen Grafik
 
 ---
 
