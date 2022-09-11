@@ -14,7 +14,7 @@ Alternativ kann eine mit dem MIT App Inventor erstellte App genutzt oder auch an
 
 ## Konzept
 
-Der IKEA Vindrikting Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. (Spannungsanpassung des seriellen Signals, siehe unten).
+Der IKEA Vindriktning Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. (Spannungsanpassung des seriellen Signals, siehe unten).
 
 Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 
@@ -36,7 +36,7 @@ Es empfiehlt sich, den Pegel des seriellen Ikea Ausganssignals (5 Volt) and den 
 
 ## ESP32 Software
 
-Die Arduino basierte Software für den ESP32 findet sich unter [ESP32 Arduino](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+Die Arduino basierte Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
 
 ---
 
@@ -46,14 +46,13 @@ Die App kann aus dem Google Play Store geladen werden. Suche nach "serial blueto
 
 ---
 
-## Handy Software 2: 'IKEA Vindriktning Monitor'
+## Handy Software 2: 'IKEA VIND Monitor'
 
 Die App herunterladen von [IKEA_VIND_Monitor.apk](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.apk) und auf dem Handy installieren.
 
-## Handy Software: IKEA Vindriktning Monitor mit MIT APP Inventor bearbeiten
+## Handy Software: 'IKEA VIND Monitor' mit MIT dem APP Inventor bearbeiten
 
-Es gibt aber auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
+Es gibt auch die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
-Eine schöne Einführung in den **MIT App Inventor** gibt es unter [Youtube App Inventor Tutorial
-](https://youtu.be/aM2ktMKAunw)  
+Eine schöne Einführung in den **MIT App Inventor** gibt es unter [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)  
 Die App als mit dem **MIT App Inventor** bearbeitbare **aia** Datei liegt auf [IKEA_VIND_Monitor.aia](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.aia)
