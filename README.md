@@ -41,7 +41,7 @@ ESP Rx2 mit IKEA Tx (Über einen Spannungsteiler)
 
 Es empfiehlt sich, den Pegel des seriellen IKEA Ausganssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
 
-
+!(https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/a9bf02976f49de251b9afea547a7217db908b948/images/Schematics.png))
 
 ---
 
