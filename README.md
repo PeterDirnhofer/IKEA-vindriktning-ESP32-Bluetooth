@@ -67,8 +67,19 @@ Hier ist der Link zum starten der Installation auf dem Handy:
 
 Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
-Eine schöne Einführung in den **MIT App Inventor** gibt es unter [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)  
+Eine schöne Einführung in den **MIT App Inventor** gibt es unter  
+[App Inventor Tutorial](https://youtu.be/aM2ktMKAunw) 
+
+
 Hinweis: Bei mir hat die Registrierung beim 'MIT App Inventor' nur mit dem Google Account funktioniert, nicht per email Anmeldung.
 
-Sobald der **MIT App Inventor** installiert ist, wird die bearbeitbare **aia** Datei importiert und kann bearbeitet werden.  
-Import von [IKEA_VIND_Monitor.aia](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/main/IKEA_VIND_Monitor.aia)
+---
+
+### IKEA VIND Monitor.aia in MIT APP inventor importieren
+
+Um die aia Datei zu laden wird zunächst das komplette Github Repository als zip runtergeladen und danach auf das lokale Laufwerk entpackt. Dazu in Github 'Code' und 'Download ZIP' klicken und anschliessend den Download auf das lokale Laufwerk unzippen.  
+
+Die unzipped Datei 'IKEA_VIND_Monitor.aia' kann dann in de **MIT APP Inventor** importiert und weiterbearbeitet werden.
+
+Download ZIP repository von  
+[GitHub Repository](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth.git)
