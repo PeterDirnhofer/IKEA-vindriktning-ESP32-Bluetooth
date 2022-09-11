@@ -30,11 +30,16 @@ Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:
 ## Hardware
 
 Der IKEA Sensor wird an die Serielle Schnittstelle des ESP32 angeschlossen.  
-So geht's: 
+Es werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und Tx.
 
-#FOTO EINFÜGEN
+Foto siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
 
-Es empfiehlt sich, den Pegel des seriellen Ikea Ausganssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
+Auf der ESP32 Seite wird verbunden  
+ESP GND mit IKEA GND  
+ESP VIN mit IKEA 5V  
+ESP Rx2 mit IKEA Tx (Über einen Spannungsteiler)
+
+Es empfiehlt sich, den Pegel des seriellen IKEA Ausganssignals (5 Volt) and den Eingang des ESP32 (3,5 Volt) mit Hilfe eines Spannungsteilers anzupassen.
 
 ---
 
