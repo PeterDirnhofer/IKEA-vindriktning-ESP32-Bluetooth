@@ -39,9 +39,9 @@ ESP GND mit IKEA GND
 ESP VIN mit IKEA 5V  
 ESP Rx2 mit IKEA Tx (Über einen Spannungsteiler)
 
-Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA Ausganssignals an den 3,5 Volt Eingangpegel des ESP32  anzupassen. Die geschieht mit Hilfe eines Spannungsteilers. 
+Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA Ausganssignals an den 3,5 Volt Eingangpegel des ESP32  anzupassen. Die geschieht mit Hilfe eines Spannungsteilers.
 
-[Spannungsteiler zur Reduzierung des Pegels 5 auf 3,5 Volt](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/a9bf02976f49de251b9afea547a7217db908b948/images/Schematics.png))
+[Spannungsteiler](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/ed034369126b07c1828fe7f08cb3ad05aead517b/images/Schematics.png)
 
 ---
 
