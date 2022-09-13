@@ -15,13 +15,15 @@ Alternativ kann eine mit dem **MIT App Inventor** erstellte App genutzt oder auc
 
 ## Konzept
 
-Der IKEA Vindriktning Sensor wird geöffnet. Es werden drei Drähte angelötet für Versorgungsspannung, Ground und das serielle Signal aus dem Sensor. (Spannungsanpassung des seriellen Signals, siehe unten).
+*IKEA SENSOR --> ESP32*  
+Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle vom IKEA Sensor.  
+Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 
-Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle. Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
+*ESP32 --> Bluetooth*  
+Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führenden # Zeichen)
 
-Der ESP32 sendet den Messwert als Zahl per Bluetooth an das Handy.
-
-Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:  
+*Bluetooth --> Handy*  
+Es gibt zwei Möglichkeiten, die Bluetooth Messwerte mit dem Handy zu empfangen und darzustellen:  
 **Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte  
 **IKEA VIND Monitor** Android App zeigt die Messwerte in einer einfachen Grafik
 
@@ -29,17 +31,17 @@ Es gibt zwei Möglichkeiten, die Messwerte auf dem Handy darzustellen:
 
 ## Hardware
 
-Der IKEA Sensor wird an die Serielle Schnittstelle des ESP32 angeschlossen.  
-Es werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und Tx.
+Der IKEA Sensor mit einem Kreuzschlitz Schraubendreher geöffnet. Die serielle Schnittstelle des ESP32 wir mit dem IKEA Sensor verbunden.  
+Dazu werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und Tx.
 
 Foto siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
 
 Auf der ESP32 Seite wird verbunden  
-ESP GND mit IKEA GND  
-ESP VIN mit IKEA 5V  
-ESP Rx2 mit IKEA Tx (Über einen Spannungsteiler)
+ESP-GND mit IKEA-GND  
+ESP-VIN mit IKEA-5V  
+ESP-Rx2 mit IKEA-REST (Über einen Spannungsteiler)
 
-Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA Ausganssignals an den 3,5 Volt Eingangpegel des ESP32  anzupassen. Die geschieht mit Hilfe eines Spannungsteilers.
+Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf den 3,5 Volt Eingangpegel des ESP32-Rx2 abzusenken. Die geschieht mit Hilfe eines Spannungsteilers.
 
 [Spannungsteiler](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/ed034369126b07c1828fe7f08cb3ad05aead517b/images/Schematics.png)
 
@@ -57,7 +59,12 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen
 
 ## Handy Software: 'Serial Bluetooth Terminal' - Zahlendarstellung
 
-Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"
+![Serial Bluetooth Terminal](images/serial_bluetooth_terminal_logo.jpg)
+
+Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"  
+Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen dargestellt)  
+
+[Bespiel](images/sreenshot_serial_bluetooth_terminal.jpeg)
 
 ---
 
