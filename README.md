@@ -65,7 +65,7 @@ Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werde
 
 Die Handy App IKEA_VIND_Monitor.apk findet sich unter [link](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/0154a634109c5e6da7ed0f975415ef33b83ec778/IKEA_VIND_Monitor.apk)
 
-Sie kann auf dem Handy installiert werden mit diesem QR Code
+Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
 ![Downlad apk](images/QR_Download_apk.png)
 
@@ -84,12 +84,15 @@ Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Invento
 
 ### IKEA VIND Monitor.aia in 'MIT APP inventor' importieren
 
-Um die aia Datei zu laden wird zunächst das komplette Github Repository als zip runtergeladen und danach auf das lokale Laufwerk entpackt. Dazu in Github 'Code' und 'Download ZIP' klicken und anschliessend den Download auf das lokale Laufwerk unzippen.  
+Zunächst wird die aia Datei von Github auf den Laptop heruntergeladen.  
 
-Die unzipped Datei 'IKEA_VIND_Monitor.aia' kann dann in de **MIT APP Inventor** importiert und weiterbearbeitet werden.
+Die Datei findet sich auf GitHub unter [aia Datei](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/e44767fd795dc8c8edca308fd593ef1f24ffa6ee/IKEA_VIND_Monitor.aia)  
+In Github auf **Downoad** (rechts in der Mitte) klicken
 
-Download ZIP repository von  
-[GitHub Repository](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth.git)
+Dann den **MIT App Inventor** im Browser starten.  
+**Import Projects from My Computer | Durchsuchen** und die gerade heruntergeladene Datei im Downloadfolder auswählen und importieren.
+
+---
 
 ## Testumgebung: Stimulation des Sensors mit einer Kerze
 
