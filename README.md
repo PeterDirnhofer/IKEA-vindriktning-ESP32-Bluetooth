@@ -76,6 +76,9 @@ Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
 ![Downlad apk](images/QR_Download_apk.png)
 
+Die App zeigt Messwerte grafisch in einer einfachen XY Darstellung. Im Beispiel wurde eine Kerze ausgeblasen. Zunächst unmittelbar neben dem Sensor, dann im Abstand von 30 Zentimetern.  
+![Beispiel Messung mit IKEA VIND Monitor](images/screenshot_vind_monitor_klein.jpg)
+
 ---
 
 ## Handy Grafik-App: 'IKEA VIND Monitor.aia' bearbeiten
@@ -94,7 +97,7 @@ Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Invento
 Zunächst wird die aia Datei von Github auf den Laptop heruntergeladen.  
 
 Die Datei findet sich auf GitHub unter [aia Datei](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/e44767fd795dc8c8edca308fd593ef1f24ffa6ee/IKEA_VIND_Monitor.aia)  
-In Github auf **Downoad** (rechts in der Mitte) klicken
+In Github auf **Download** (rechts in der Mitte) klicken
 
 Dann den **MIT App Inventor** im Browser starten.  
 **Import Projects from My Computer | Durchsuchen** und die gerade heruntergeladene Datei im Downloadfolder auswählen und importieren.
