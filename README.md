@@ -68,13 +68,13 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"  
 Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen dargestellt)  
 
-[Bespiel](images/sreenshot_serial_bluetooth_terminal.jpg)
+[Mess Bespiel](images/sreenshot_serial_bluetooth_terminal.jpg)
 
 ---
 
-## Handy Grafik-App: 'IKEA VIND Monitor.apk' installieren
+## Handy Grafik-App: 'IKEA VIND Monitor.app'
 
-Die Handy App IKEA_VIND_Monitor.apk findet sich unter [link](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/0154a634109c5e6da7ed0f975415ef33b83ec778/IKEA_VIND_Monitor.apk)
+'IKEA VIND Monitor' ist eine App zur einfachen grafischen x y Darstellung der Messwerte.  
 
 Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
