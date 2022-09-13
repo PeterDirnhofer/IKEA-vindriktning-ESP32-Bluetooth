@@ -16,18 +16,20 @@ Alternativ kann eine mit dem **MIT App Inventor** erstellte App genutzt oder auc
 ## Datenfluss
 
 *IKEA SENSOR --> ESP32*  
-Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle vom IKEA Sensor.  
+Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle.  
 Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 
 *ESP32 --> Bluetooth*  
-Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führenden # Zeichen)
+Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führenden # Zeichen um den Start des Datenpakets zu markieren)
 
 *Bluetooth --> Handy*  
 Es gibt zwei Möglichkeiten, die Bluetooth Messwerte mit dem Handy zu empfangen und darzustellen:  
 
-**Serial Bluetooth Terminal** Standard-App aus dem Play Store zeigt nur Zahlenwerte
+**Serial Bluetooth Terminal**  
+Die Standard-App aus dem Play Store zeigt nur Zahlenwerte
 
-**IKEA VIND Monitor** Eigens erstellte App zeigt die Messwerte in einer einfachen Grafik
+**IKEA VIND Monitor**  
+Die eigens erstellte App zeigt die Messwerte in einer einfachen Grafik
 
 ---
 
