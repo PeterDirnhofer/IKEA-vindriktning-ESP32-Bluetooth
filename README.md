@@ -13,7 +13,7 @@ Alternativ kann eine mit dem **MIT App Inventor** erstellte App genutzt oder auc
 
 ---
 
-## Konzept
+## Datenfluss
 
 *IKEA SENSOR --> ESP32*  
 Der ESP32 empfängt die Daten des Sensors über seine serielle UART Schnittstelle vom IKEA Sensor.  
@@ -24,19 +24,21 @@ Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führ
 
 *Bluetooth --> Handy*  
 Es gibt zwei Möglichkeiten, die Bluetooth Messwerte mit dem Handy zu empfangen und darzustellen:  
-**Serial Bluetooth Terminal** aus dem Play Store zeigt Zahlenwerte  
-**IKEA VIND Monitor** Android App zeigt die Messwerte in einer einfachen Grafik
+
+**Serial Bluetooth Terminal** Standard-App aus dem Play Store zeigt nur Zahlenwerte
+
+**IKEA VIND Monitor** Eigens erstellte App zeigt die Messwerte in einer einfachen Grafik
 
 ---
 
 ## Hardware
 
 Der IKEA Sensor mit einem Kreuzschlitz Schraubendreher geöffnet. Die serielle Schnittstelle des ESP32 wir mit dem IKEA Sensor verbunden.  
-Dazu werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und Tx.
+Dazu werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und REST
 
-Foto siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
+Anleitung mit Fotos siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
 
-Auf der ESP32 Seite wird verbunden  
+Es werde verbunden 
 ESP-GND mit IKEA-GND  
 ESP-VIN mit IKEA-5V  
 ESP-Rx2 mit IKEA-REST (Über einen Spannungsteiler)
