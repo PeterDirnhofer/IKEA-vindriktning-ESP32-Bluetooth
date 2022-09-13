@@ -76,7 +76,7 @@ Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
 ![Downlad apk](images/QR_Download_apk.png)
 
-Die App zeigt Messwerte grafisch in einer einfachen XY Darstellung. Im Beispiel wurde eine Kerze ausgeblasen. Zunächst unmittelbar neben dem Sensor, dann im Abstand von 30 Zentimetern.  
+Die App zeigt Messwerte grafisch in einer einfachen XY Darstellung. Im Beispiel wurden Kerzen ausgeblasen. Zunächst unmittelbar neben dem Sensor, dann im Abstand von 30 Zentimetern.  
 
 ![Beispiel Messung mit IKEA VIND Monitor](images/screenshot_vind_monitor_klein.jpg)
 
