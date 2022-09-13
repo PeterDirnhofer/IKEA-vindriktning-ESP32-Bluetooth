@@ -60,8 +60,9 @@ Navigieren zu [IKEA_ESP32.ino](https://github.com/PeterDirnhofer/IKEA-vintriknin
 
 In der Arduino-IDE unter 'Werkzeuge Board' das 'ESP32 Dev Module'  wählen. Wenn das Board nicht angeboten ist, muss noch der ESP32 Boardverwalter installiert werden.  Siehe unten.
 
-
-Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen zu vermeiden, in 'IKEA_ESP.ino' den Bluetooth devicename 'BT_NAME' individuell  pro device ändern.  
+Hinweis:  
+Sind in einer Arbeitsgruppe mehrere Nutzer\*innen auf engen Raum, muss - um Bluetooth-Konflikte zu vermeiden - jeder ESP32 seinen individuellen Bluetooth devicename besitzen.  
+Dazu im Arduino Sketch den Bluetooth devicename 'BT_NAME' individuell pro ESP32 ändern.  
 ``#define BT_NAME "IKEA_BT_001"`` oder  
 ``#define BT_NAME "IKEA_BT_002"`` usw.
 
@@ -80,7 +81,7 @@ Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen da
 
 ## Handy Grafik-App: 'IKEA VIND Monitor.app'
 
-'IKEA VIND Monitor' ist eine App zur einfachen grafischen x y Darstellung der Messwerte.  
+'IKEA VIND Monitor' ist eine App zur einfachen grafischen Darstellung der Messwerte.  
 
 Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
@@ -94,7 +95,7 @@ Die App zeigt Messwerte grafisch in einer einfachen XY Darstellung. Im Beispiel 
 
 ## Handy Grafik-App: 'IKEA VIND Monitor.aia' bearbeiten
 
-Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** zu bearbeiten und an die eigenen Vorstellungen anzupassen.
+Es gibt die Möglichkeit, die App mit dem **MIT App Inventor** nachträglich zu bearbeiten und an die eigenen Vorstellungen anzupassen.
 
 Eine schöne Einführung in den **MIT App Inventor** und die Installation gibt es unter  
 [App Inventor Tutorial](https://youtu.be/aM2ktMKAunw)
@@ -115,11 +116,16 @@ Dann den **MIT App Inventor** im Browser starten.
 
 ---
 
+# Hilfe
+
+
 ## Testumgebung: Stimulation des Sensors mit einer Kerze
 
 Um beim Experimentieren den Sensor zu stimulieren kann man Zigarettenrauch vewenden. Es geht aber auch ohne Zigaretten: Der Rauch einer gerade ausgeblasenen Kerze in der Nähe treibt den Sensor locker in den roten Bereich und die Messwerte fallen dann langsam in ein, zwei Minuten wieder ab.
 
 Bei den Versuchen ist auch etwas Geduld gefragt. Der Sensor schickt nur alle paar Sekunden Messdaten und dann gleich mehrere Pakete nacheinander. Die blaue LED am ESP32 zeigt an, wenn der ESP gerade Messdaten vom Sensor empfängt.
+
+---
 
 ## Installation ESP32 Boardverwalter
 
@@ -127,4 +133,4 @@ So geht's
 
 'Datei | Voreinstellungen | Zusätzliche Bordverwalter'  
 Diesen Link einfügen:  
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+``https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json``
