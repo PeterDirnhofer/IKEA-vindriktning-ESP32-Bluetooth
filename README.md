@@ -35,12 +35,12 @@ Die eigens erstellte App zeigt die Messwerte in einer einfachen Grafik
 
 ## Hardware
 
-Der IKEA Sensor mit einem Kreuzschlitz Schraubendreher geöffnet. Die serielle Schnittstelle des ESP32 wir mit dem IKEA Sensor verbunden.  
+Der IKEA Sensor wird mit einem Kreuzschlitz Schraubendreher geöffnet. Die serielle Schnittstelle des ESP32 wird mit dem IKEA Sensor verbunden.  
 Dazu werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und REST
 
 Anleitung mit Fotos siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
 
-Es werde verbunden 
+Es werde verbunden  
 ESP-GND mit IKEA-GND  
 ESP-VIN mit IKEA-5V  
 ESP-Rx2 mit IKEA-REST (Über einen Spannungsteiler)
@@ -56,14 +56,14 @@ Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf d
 Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
 
 Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen zu vermeiden, in 'IKEA_ESP.ino' den Bluetooth devicename 'BT_NAME' individuell  pro device ändern.  
-``#define BT_NAME "IKEA_BT_001"``  
+``#define BT_NAME "IKEA_BT_001"`` oder  
 ``#define BT_NAME "IKEA_BT_002"`` usw.
 
 ---
 
 ## Handy Software: 'Serial Bluetooth Terminal' - Zahlendarstellung
 
-![Serial Bluetooth Terminal](images/rial_bluetooth_terminal_logo.jpg)
+![Serial Bluetooth Terminal](images/serial_bluetooth_terminal_logo.jpg)
 
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"  
 Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen dargestellt)  
