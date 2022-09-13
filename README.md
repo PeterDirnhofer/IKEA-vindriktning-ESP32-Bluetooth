@@ -105,7 +105,7 @@ Die Datei findet sich auf GitHub unter [aia Datei](https://github.com/PeterDirnh
 In Github auf **Download** (rechts in der Mitte) klicken
 
 Dann den **MIT App Inventor** im Browser starten.  
-**Import Projects from My Computer | Durchsuchen** und die gerade heruntergeladene Datei im Downloadfolder auswählen und importieren.
+**Import Projects from My Computer | Durchsuchen** und die gerade heruntergeladene Datei im Downloadfolder auswählen und in den 'MIT App Inventor' importieren.
 
 ---
 
