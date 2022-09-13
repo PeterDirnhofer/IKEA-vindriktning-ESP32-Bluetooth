@@ -59,12 +59,12 @@ Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen
 
 ## Handy Software: 'Serial Bluetooth Terminal' - Zahlendarstellung
 
-![Serial Bluetooth Terminal](images/serial_bluetooth_terminal_logo.jpg)
+![Serial Bluetooth Terminal](images/rial_bluetooth_terminal_logo.jpg)
 
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"  
 Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen dargestellt)  
 
-[Bespiel](images/sreenshot_serial_bluetooth_terminal.jpeg)
+[Bespiel](images/sreenshot_serial_bluetooth_terminal.jpg)
 
 ---
 
