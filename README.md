@@ -52,8 +52,14 @@ Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf d
 ---
 
 ## ESP32 Software
+**Software Download so geht's**  
+Mit dem link unten GitHub öffnen.  
+Dann in GitHub 'raw' klicken  
+Dann mit 'Rechstklick | Seite speichern unter .. auf den Laptop speichern.
 
-Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+
+Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [link auf Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+
 
 Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen zu vermeiden, in 'IKEA_ESP.ino' den Bluetooth devicename 'BT_NAME' individuell  pro device ändern.  
 ``#define BT_NAME "IKEA_BT_001"`` oder  
