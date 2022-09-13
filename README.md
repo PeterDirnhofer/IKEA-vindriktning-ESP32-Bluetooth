@@ -51,14 +51,14 @@ Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf d
 
 ---
 
-## ESP32 Software
+## ESP32 Arduino Software
+
 **Software Download so geht's**  
-Mit dem link unten GitHub öffnen.  
-Dann in GitHub 'raw' klicken  
-Dann mit 'Rechstklick | Seite speichern unter .. auf den Laptop speichern.
+Navigieren zu [IKEA_ESP32.ino](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)  
+**raw** klicken  
+**Rechtsklick | Seite speichern unter ..** speichert 'IKEA_ESP32.ino' auf dem Laptop.
 
-
-Die Arduino basierte ESP32 Software 'IKEA_ESP.ino' findet sich unter [link auf Arduino SW](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)
+In der Arduino-IDE unter 'Werkzeuge Board' das 'ESP32 Dev Module'  wählen. Wenn das Board nicht angeboten ist, muss noch der ESP32 Boardverwalter installiert werden.  Siehe unten.
 
 
 Hinweis: Um in Arbeitsgruppen Bluetooth-Konflikte mit benachbarten Nutzer\*innen zu vermeiden, in 'IKEA_ESP.ino' den Bluetooth devicename 'BT_NAME' individuell  pro device ändern.  
@@ -120,3 +120,11 @@ Dann den **MIT App Inventor** im Browser starten.
 Um beim Experimentieren den Sensor zu stimulieren kann man Zigarettenrauch vewenden. Es geht aber auch ohne Zigaretten: Der Rauch einer gerade ausgeblasenen Kerze in der Nähe treibt den Sensor locker in den roten Bereich und die Messwerte fallen dann langsam in ein, zwei Minuten wieder ab.
 
 Bei den Versuchen ist auch etwas Geduld gefragt. Der Sensor schickt nur alle paar Sekunden Messdaten und dann gleich mehrere Pakete nacheinander. Die blaue LED am ESP32 zeigt an, wenn der ESP gerade Messdaten vom Sensor empfängt.
+
+## Installation ESP32 Boardverwalter
+
+So geht's  
+
+'Datei | Voreinstellungen | Zusätzliche Bordverwalter'  
+Diesen Link einfügen:  
+https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
