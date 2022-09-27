@@ -25,10 +25,10 @@ Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führ
 *Bluetooth --> Handy*  
 Es gibt zwei Möglichkeiten, die Bluetooth Messwerte mit dem Handy zu empfangen und darzustellen:  
 
-**Serial Bluetooth Terminal**  
+**Messerte anzeigen mit dem Serial Bluetooth Terminal**  
 Die Standard-App aus dem Play Store zeigt nur Zahlenwerte
 
-**IKEA VIND Monitor**  
+**Messwerte anzeigen mit IKEA VIND Monitor**  
 Die eigens erstellte App zeigt die Messwerte in einer einfachen Grafik
 
 ---
@@ -40,12 +40,12 @@ Dazu werden 3 Drähte an die IKEA Platine gelötet: GND, 5V und REST
 
 Anleitung mit Fotos siehe [Hypfer](https://github.com/Hypfer/esp8266-vindriktning-particle-sensor)
 
-Es werde verbunden  
-ESP-GND mit IKEA-GND  
-ESP-VIN mit IKEA-5V  
-ESP-Rx2 mit IKEA-REST (Über einen Spannungsteiler)
+Es werden verbunden  
+ESP32-GND mit IKEA-GND  
+ESP32-VIN mit IKEA-5V  
+ESP32-Rx2 mit IKEA-REST (Über einen Spannungsteiler)
 
-Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf den 3,5 Volt Eingangpegel des ESP32-Rx2 abzusenken. Die geschieht mit Hilfe eines Spannungsteilers.
+Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf den 3,5 Volt Eingangpegel des ESP32-Rx2 abzusenken. Die geschieht mit Hilfe eines Spannungsteilers. 
 
 [Spannungsteiler](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/ed034369126b07c1828fe7f08cb3ad05aead517b/images/Schematics.png)
 
@@ -58,7 +58,7 @@ Navigieren zu [IKEA_ESP32.ino](https://github.com/PeterDirnhofer/IKEA-vintriknin
 **raw** klicken  
 **Rechtsklick | Seite speichern unter ..** speichert 'IKEA_ESP32.ino' auf dem Laptop.
 
-In der Arduino-IDE unter 'Werkzeuge Board' das 'ESP32 Dev Module'  wählen. Wenn das Board nicht angeboten ist, muss noch der ESP32 Boardverwalter installiert werden.  Siehe unten.
+In der Arduino-IDE unter 'Werkzeuge Board' das 'ESP32 Dev Module'  wählen. Wenn das Board nicht angeboten ist, muss noch der ESP32 Boardverwalter installiert werden.  Link siehe unten.
 
 Hinweis:  
 Sind in einer Arbeitsgruppe mehrere Nutzer\*innen auf engen Raum, muss - um Bluetooth-Konflikte zu vermeiden - jeder ESP32 seinen individuellen Bluetooth devicename besitzen.  
@@ -73,7 +73,7 @@ Dazu im Arduino Sketch den Bluetooth devicename 'BT_NAME' individuell pro ESP32 
 ![Serial Bluetooth Terminal](images/serial_bluetooth_terminal_logo.jpg)
 
 Die App 'Serial Bluetooth Terminal' kann aus dem Google Play Store geladen werden. Im Play Store Suche nach "serial bluetooth terminal"  
-Damit werden die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen dargestellt)  
+Die App zeigt die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen)  
 
 [Mess Bespiel](images/sreenshot_serial_bluetooth_terminal.jpg)
 
