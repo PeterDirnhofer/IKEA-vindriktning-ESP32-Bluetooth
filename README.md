@@ -11,6 +11,8 @@ Es wird der ESP32 an Stelle des ESP8266 verwendet. Der ESP32 ermöglicht die Kom
 Die Messdaten über Bluetooth können auf dem Smartphone mit einer App "von der Stange" als Zahlen dargestellt werden.  
 Alternativ kann eine mit dem **MIT App Inventor** erstellte App genutzt oder auch angepasst werden, die die Daten in einer einfachen Grafik darstellt.
 
+**Das ESP32-Programm kommuniziert über 'Bluetooth Classic' mit Apps ausschliesslich auf Android Smartphones. Das von Apple/IOS geforderte 'Blutooth BLE' wird aktuell nicht unterstützt.** 
+
 ---
 
 ## Datenfluss
@@ -22,7 +24,7 @@ Der ESP32 interpretiert den Datenstrom und extrahiert daraus den Messwert.
 *ESP32 --> Bluetooth*  
 Der ESP32 sendet den Messwert als Zahlenstring über Bluetooth. (Mit einem führenden # Zeichen um den Start des Datenpakets zu markieren)
 
-*Bluetooth --> Handy*  
+*Bluetooth --> Android Handy*  
 Es gibt zwei Möglichkeiten, die Bluetooth Messwerte mit dem Handy zu empfangen und darzustellen:  
 
 **Messerte anzeigen mit dem Serial Bluetooth Terminal**  
