@@ -1,171 +1,148 @@
 /*****************************************************************
-  Find more information on
+  Find more information on:
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
-  
+
   Story:
-  ESP32 reads IKEA Feinstaubsensor VINDRIKNING
-  via ESP32 UART2 serial interface
-  Data can be monitored on Arduino's Serial Monitor with 115200 Baud
+  ESP32 reads IKEA Feinstaubsensor VINDRIKTNING
+  via UART2 serial interface.
+  Data can be monitored on Arduino's Serial Monitor at 115200 Baud.
 
-  Additionally, data are sent over Bluetooth and can be monitored on a Android phone
-   
+  Additionally, data is sent over Bluetooth and can be monitored on an Android phone.
 
-  Code is based on
+  Code is based on:
   https://github.com/Hypfer/esp8266-vindriktning-particle-sensor
 
-  
   ***********************************************************************
   Details:
-  Communication betwenn IKEA sensor an ESP32
-  ESP32 uses UART2 for serial communication. Class name 'ìkeaSerial'
-  - 9600 Baud
-  - 3.3 Volt on ESP side, 5 Volt on IKEA sensor side. Voltage divider need to protect ESP32 input !!!
-  - GPIO16=RX2 to receive data
-  - PIO17=TX2  Transmission Tx. Info: Tx2 is not used as no data to be sent to IKEA sensor
+  Communication between IKEA sensor and ESP32:
+  - ESP32 uses UART2 (class: ikeaSerial)
+  - Baud rate: 9600
+  - Voltage: 3.3V on ESP32 side, 5V on IKEA sensor side
+    -> Use a voltage divider to protect the ESP32 input!
+  - GPIO16 = RX2 (receiving data)
+  - GPIO17 = TX2 (not used; no data sent to IKEA sensor)
 
-  A nice explanition how to use ESP32 UART2: https://youtu.be/GwShqW39jlE
+  A nice explanation of how to use UART2 on the ESP32:
+  https://youtu.be/GwShqW39jlE
 
-  
   ***********************************************************************
-  Additionally ESP32 sends measured data via Bluetooth
-  To see the Bluetooth data on your android phone, install 'Serial Bluetooth Terminal' from the Playstore
+  Additionally, ESP32 sends measured data via Bluetooth.
+  To see Bluetooth data on your Android phone, install
+  "Serial Bluetooth Terminal" from the Play Store.
 
-  Your phone can also display sensor data in a simple graphic using the IKEA_VIND_Monitor. You find it under
+  Your phone can also display sensor data graphically using the IKEA_VIND_Monitor app:
   https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
-  Optionally, you can edit ESPBluetoothApp using the MIT App Inventor.
-#define BT_NAME "IKEA_BT_001"  // Individual devicename of ESP32 Bluetooth
 
+  Optionally, you can edit ESPBluetoothApp using MIT App Inventor.
+
+  #define BT_NAME "IKEA_BT_001"  // Unique device name for ESP32 Bluetooth
+***********************************************************************/
+
+
+/***********************************************************************************************
+   IF YOU WORK IN A GROUP, CHANGE BT_NAME INDIVIDUALLY TO AVOID BLUETOOTH CONFLICTS!
 ************************************************************************************************/
-
+#define BT_NAME "IKEA_BT_001"
+// #define BT_NAME "IKEA_BT_002"
+// #define BT_NAME "IKEA_BT_003"
 
 /***********************************************************************************************/
-/* IF YOU WORK IN A GROUP, CHANGE BT_NAME INDIVIDUALLY TO AVOID CONFLICTS ON BLUETOOTH*/
+// Define pins for RX and TX
+#define RXD2 16  // GPIO16 as RX
+#define TXD2 17  // GPIO17 as TX (not used but must be defined)
 
-#define BT_NAME "IKEA_BT_001"  // Individual devicename of ESP32 Bluetooth
-//#define BT_NAME "IKEA_BT_002"  // Individual devicename of ESP32 Bluetooth
-//#define BT_NAME "IKEA_BT_003"  // Individual devicename of ESP32 Bluetooth
+#define LED_BUILTIN 2  // Blue LED on ESP32 indicates data is received from IKEA sensor
 
-
-/**********************************************************************************************/
-
-
-
-#define LED_BUILTIN 2          // Blue LED on ESP to indicate: ESP gets data from IKEA sensor
-
-// *******************************************************************
-// Communication with IKEA Sensor via UART2
+// UART2 communication with IKEA sensor
 HardwareSerial ikeaSerial(2);
 
-uint8_t serialRxBuf[20];  // Buffer for read data
-uint8_t rxBufIdx = 0;      // Buffer pointer
+// Buffer for received data
+uint8_t serialRxBuf[20];
+uint8_t rxBufIdx = 0;
 
-
-// ********************************************************************
-// Provide data via Bluetooth
-// https://youtu.be/aM2ktMKAunw
+// Bluetooth
 #include <BluetoothSerial.h>
-
-// init Bluetooth class
-BluetoothSerial ESP_BT;
+BluetoothSerial ESP_BT;  // Init Bluetooth class
 
 /*******************************************************************/
-void clearRxBuf()
-{
-  // Clear everything for the next message
+void clearRxBuf() {
   memset(serialRxBuf, 0, sizeof(serialRxBuf));
   rxBufIdx = 0;
 }
 
-/*************************** Sketch Code setup ************************************/
-void setup()
-{
+/*************************** Setup ************************************/
+void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   Serial.begin(115200);
-  delay(500);           // 500 ms is enough time to swith USB between programming and Serial monitor
+  delay(500);  // Give time to switch USB from programming to Serial Monitor
 
+  // Initialize serial communication with IKEA Vindriktning
+  ikeaSerial.begin(9600, SERIAL_8N1, RXD2, TXD2);
 
-  /********** Init serial communication to IKEA vintriktning ******************/
-  ikeaSerial.begin(9600);
-
-  if (!ikeaSerial)
-  { // If the object did not initialize, then its configuration is invalid
-    Serial.println("Invalid SoftwareSerial pin configuration, check config");
-  }
-  else
-  {
+  if (!ikeaSerial) {
+    Serial.println("Invalid Serial configuration. Check RX/TX pins.");
+  } else {
     Serial.println("+++ UART2 to IKEA sensor initialized");
   }
 
-  /********************** Setup  Bluetooth Connection ****************/
-  ESP_BT.begin(BT_NAME); //Name of your Bluetooth interface -> will show up on your phone
+  // Initialize Bluetooth
+  ESP_BT.begin(BT_NAME);
   Serial.print("+++ Bluetooth initialized as *** ");
   Serial.print(BT_NAME);
   Serial.println(" ***");
 
-
-  clearRxBuf();  
+  clearRxBuf();
   Serial.println("Waiting for sensor ...");
 }
 
+/*************************** Loop ************************************/
+void loop() {
+  digitalWrite(LED_BUILTIN, LOW);  // LED off while waiting
 
-/********************** Sketch Code loop ********************/
-void loop()
-{
-
-  digitalWrite(LED_BUILTIN, LOW);    // Blue LED off during waiting for sensor data
-  while (!ikeaSerial.available())    // Wait until IKEA sensor sends data
-  {
-    ;
+  while (!ikeaSerial.available()) {
+    // Wait for data from IKEA sensor
   }
 
-  // Data comming from sensor
-  digitalWrite(LED_BUILTIN, HIGH); // Blue LED on indicates data are comming from IKEA sensor ...
+  digitalWrite(LED_BUILTIN, HIGH);  // LED on when data starts arriving
 
-  // Read one paket sensor data (20 Bytes) and save into 'serialRxBuf'
-  while (ikeaSerial.available())
-  {
-    serialRxBuf[rxBufIdx++] = ikeaSerial.read(); // read data to rxBuf
-    // Without this delay, receiving data breaks for reasons that are beyond me
-    delay(15);
+  // Read 20-byte data packet from sensor
+  while (ikeaSerial.available()) {
+    serialRxBuf[rxBufIdx++] = ikeaSerial.read();
+    delay(15);  // Prevent data corruption
 
-    if (rxBufIdx > 20)  // To avoid stack overflow. 20 Bytes in one paket
-      clearRxBuf();
+    if (rxBufIdx > 20) {
+      clearRxBuf();  // Avoid buffer overflow
+    }
   }
 
-  // Plausibility Check. First five bytes must be 0x16 0x11 0x0b 0x00 0x00
-  // length of dataset must be 20
+  // Check header for validity: first 5 bytes must match
   bool headerValid =
     serialRxBuf[0] == 0x16 &&
     serialRxBuf[1] == 0x11 &&
     serialRxBuf[2] == 0x0B &&
     serialRxBuf[3] == 0x00 &&
-    serialRxBuf[3] == 0x00;
+    serialRxBuf[4] == 0x00;
 
-  if (headerValid & (rxBufIdx == 20))
-  {
-    // Relevant information can be found in Byte 5 and 6 from IKEA sent data
+  if (headerValid && rxBufIdx == 20) {
+    // Get PM2.5 value (bytes 5 and 6)
     const int ikeaValue = (serialRxBuf[5] << 8) | serialRxBuf[6];
 
-    // Send data to Serial Monitor
-    Serial.print(ikeaValue);
-    Serial.println();
+    // Send value to Serial Monitor
+    Serial.println(ikeaValue);
 
-    // Send data via Bluetooth as String
-    // with leading #
-    String sendString="#";
+    // Send value via Bluetooth with leading '#'
+    String sendString = "#";
     sendString.concat(String(ikeaValue));
     ESP_BT.println(sendString);
 
-    // For information only:
-    // Uncomment, if you want to display one line with complete sensor raw-data from IKEA sensor in Serial Monitor
+    // Debug: print full raw data
     /*
-      for (int i = 0; i < rxBufIdx; i++)
-      {
-        Serial.printf("%02x ", serialRxBuf[i]);
-      }
-      Serial.println();
+    for (int i = 0; i < rxBufIdx; i++) {
+      Serial.printf("%02x ", serialRxBuf[i]);
+    }
+    Serial.println();
     */
-
   }
+
   clearRxBuf();
 }
