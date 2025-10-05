@@ -110,7 +110,7 @@ Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Invento
 
 Zunächst wird die aia Datei von Github auf den Laptop heruntergeladen.  
 
-Die Datei findet sich auf GitHub unter [aia Datei](https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth/blob/e44767fd795dc8c8edca308fd593ef1f24ffa6ee/IKEA_VIND_Monitor.aia)  
+Die Datei findet sich auf GitHub unter [aia Datei](SmartphoneApp\IKEA_VIND_Monitor_2025.aia)  
 In Github **IKEA_VIND_Monitor.aia** Klicken.  Dann rechts auf **Download** klicken und die Datei auf den Windows Computer laden.
 
 
