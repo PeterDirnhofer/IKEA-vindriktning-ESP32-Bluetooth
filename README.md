@@ -1,5 +1,7 @@
 # IKEA-Feinstaubsensor VINDRIKTNING mit ESP32 per Bluetooth auf Smartphone anzeigen
 
+**Modernes PlatformIO Projekt für ESP32 Entwicklung**
+
 IKEA bietet den Feinstaubsensor VINDRIKTNING an
 [IKEA vindriktning](https://www.ikea.com/de/de/p/vindriktning-luftqualitaetssensor-70498242/)
 
@@ -10,6 +12,8 @@ Die Artikel von [heise](https://www.heise.de/ratgeber/Ikea-Feinstaubsensor-Vindr
 Es wird der ESP32 an Stelle des ESP8266 verwendet. Der ESP32 ermöglicht die Kommunikation mit einem Smartphone per Bluetooth anstelle des WLAN.  
 Die Messdaten über Bluetooth können auf dem Smartphone mit einer App "von der Stange" als Zahlen dargestellt werden.  
 Alternativ kann eine mit dem **MIT App Inventor** erstellte App genutzt oder auch angepasst werden, die die Daten in einer einfachen Grafik darstellt.
+
+**Dieses Projekt verwendet PlatformIO für moderne ESP32-Entwicklung mit VS Code. Legacy Arduino IDE Support ist optional verfügbar.**
 
 **Das ESP32-Programm kommuniziert über 'Bluetooth Classic' mit Apps ausschliesslich auf Android Smartphones. Das von Apple/IOS geforderte 'Blutooth BLE' wird aktuell nicht unterstützt.** 
 
@@ -53,18 +57,63 @@ Es empfiehlt sich, den 5 Volt-Pegel des seriellen IKEA-REST Ausganssignals auf d
 
 ---
 
-## ESP32 Arduino Software
+## ESP32 Software mit Arduino IDE
 
-**Software Download so geht's**  
-Navigieren zu [IKEA_ESP32.ino](https://github.com/PeterDirnhofer/IKEA-vintrikning-ESP32-Bluetooth/blob/main/IKEA_ESP32.ino)  
-**raw** klicken  
-**Rechtsklick | Seite speichern unter ..** speichert 'IKEA_ESP32.ino' auf dem Laptop.
+**Entwicklung mit Arduino IDE**
 
-In der Arduino-IDE unter 'Werkzeuge Board' das 'ESP32 Dev Module'  wählen. Wenn das Board nicht angeboten ist, muss noch der ESP32 Boardverwalter installiert werden.  Link siehe unten.
+1. **Arduino IDE installieren** - Download von https://www.arduino.cc/en/software
+2. **ESP32 Board Package installieren:**
+   - Arduino IDE öffnen
+   - `Datei` → `Voreinstellungen` → `Zusätzliche Boardverwalter-URLs`
+   - Diesen Link einfügen: `https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json`
+   - `OK` klicken
+   - `Werkzeuge` → `Board` → `Boardverwalter`
+   - Nach "ESP32" suchen und installieren
 
-Hinweis:  
-Sind in einer Arbeitsgruppe mehrere Nutzer\*innen auf engen Raum, muss - um Bluetooth-Konflikte zu vermeiden - jeder ESP32 seinen individuellen Bluetooth devicename besitzen.  
-Dazu im Arduino Sketch den Bluetooth devicename 'BT_NAME' individuell pro ESP32 ändern.  
+3. **Projekt-Datei vorbereiten:**
+   
+   **Copy-Paste aus main.cpp**
+   - Datei `src/main.cpp` in einem Texteditor öffnen
+   - Gesamten Inhalt kopieren (Ctrl+A, dann Ctrl+C)
+   - Neue `.ino` Datei in Arduino IDE erstellen: `Datei` → `Neu`
+   - Inhalt einfügen (Ctrl+V)
+   - Die Zeile `#include <Arduino.h>` **löschen** (Arduino IDE braucht das nicht)
+   - Datei speichern als `IKEA_ESP32.ino`
+
+
+4. **Board konfigurieren:**
+   - `Werkzeuge` → `Board` → `ESP32 Arduino` → `ESP32 Dev Module`
+   - `Werkzeuge` → `Port` → Entsprechenden COM-Port auswählen
+   - `Werkzeuge` → `Upload Speed` → `921600` (oder langsamer bei Problemen)
+
+5. **Kompilieren und hochladen:**
+   - **Kompilieren:** Ctrl+R oder Häkchen-Symbol
+   - **Hochladen:** Ctrl+U oder Pfeil-Symbol
+   - **Serial Monitor:** Ctrl+Shift+M (115200 Baud einstellen)
+
+**Bluetooth Device Name ändern (Arduino IDE):**  
+Hinweis: Sind in einer Arbeitsgruppe mehrere Nutzer\*innen auf engen Raum, muss - um Bluetooth-Konflikte zu vermeiden - jeder ESP32 seinen individuellen Bluetooth devicename besitzen.  
+In der `.ino` Datei die Zeile ändern:  
+``#define BT_NAME "IKEA_BT_001"`` zu z.B. ``#define BT_NAME "IKEA_BT_002"``
+
+---
+
+## ESP32 Software mit PlatformIO (Alternative)
+
+**Moderne Entwicklungsumgebung als Alternative**
+
+Für Nutzer, die eine moderne IDE mit erweiterten Features bevorzugen:
+
+1. **VS Code installieren** - Falls noch nicht vorhanden: https://code.visualstudio.com/
+2. **PlatformIO Extension installieren** - In VS Code: Extensions → Suche nach "PlatformIO IDE"
+3. **Projekt klonen oder herunterladen** - Dieses Repository auf den Computer laden
+4. **Projekt öffnen** - Ordner in VS Code öffnen (PlatformIO erkennt automatisch die `platformio.ini`)
+5. **Kompilieren** - Ctrl+Alt+B oder PlatformIO Build Button
+6. **Hochladen** - Ctrl+Alt+U oder PlatformIO Upload Button  
+7. **Serial Monitor** - Ctrl+Alt+S für Datenüberwachung bei 115200 Baud
+
+**Bluetooth Device Name ändern (PlatformIO):**  
+In der Datei `src/main.cpp` den Bluetooth devicename 'BT_NAME' individuell pro ESP32 ändern:  
 ``#define BT_NAME "IKEA_BT_001"`` oder  
 ``#define BT_NAME "IKEA_BT_002"`` usw.
 
@@ -129,10 +178,4 @@ Bei den Versuchen ist auch etwas Geduld gefragt. Der Sensor schickt nur alle paa
 
 ---
 
-## Installation ESP32 Boardverwalter
 
-So geht's  
-
-'Datei | Voreinstellungen | Zusätzliche Bordverwalter'  
-Diesen Link einfügen:  
-``https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json``
