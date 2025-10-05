@@ -7,7 +7,7 @@
   via UART2 serial interface.
   Data can be monitored on Arduino's Serial Monitor at 115200 Baud.
 
-  Additionally, data is sent over Bluetooth and can be monitored on an Android phone.
+  Additionally, data is sent over BLE (Bluetooth Low Energy) and can be monitored on smartphones.
 
   Code is based on:
   https://github.com/Hypfer/esp8266-vindriktning-particle-sensor
@@ -26,34 +26,47 @@
   https://youtu.be/GwShqW39jlE
 
   ***********************************************************************
-  Additionally, ESP32 sends measured data via Bluetooth.
-  To see Bluetooth data on your Android phone, install
-  "Serial Bluetooth Terminal" from the Play Store.
+  Additionally, ESP32 sends measured data via BLE (Bluetooth Low Energy).
+  To see BLE data on your smartphone, you need a BLE scanner app like:
+  - "nRF Connect" (Nordic Semiconductor)
+  - "BLE Scanner"
+  - "LightBlue Explorer" (iOS)
 
-  Your phone can also display sensor data graphically using the IKEA_VIND_Monitor app:
-  https://github.com/PeterDirnhofer/IKEA-vindriktning-ESP32-Bluetooth
+  Your phone can also display sensor data using custom BLE apps that support
+  Nordic UART Service (NUS) for serial-like communication over BLE.
 
-  Optionally, you can edit ESPBluetoothApp using MIT App Inventor.
-
-  #define BT_NAME "IKEA_BT_001"  // Unique device name for ESP32 Bluetooth
+  #define BLE_NAME "IKEA_BLE_001"  // Unique device name for ESP32 BLE
 ***********************************************************************/
 
 #include <Arduino.h>
-#include <BluetoothSerial.h>
+#include <BLEDevice.h>
+#include <BLEServer.h>
+#include <BLEUtils.h>
+#include <BLE2902.h>
 
 /***********************************************************************************************
-   IF YOU WORK IN A GROUP, CHANGE BT_NAME INDIVIDUALLY TO AVOID BLUETOOTH CONFLICTS!
+   CONFIGURATION OPTIONS
 ************************************************************************************************/
-#define BT_NAME "IKEA_BT_001"
-// #define BT_NAME "IKEA_BT_002"
-// #define BT_NAME "IKEA_BT_003"
+#define SIMULATION 1 // Set to 1 for simulation mode, 0 for real sensor data
+
+/***********************************************************************************************
+   IF YOU WORK IN A GROUP, CHANGE BLE_NAME INDIVIDUALLY TO AVOID BLUETOOTH CONFLICTS!
+************************************************************************************************/
+#define BLE_NAME "IKEA_BLE_001"
+// #define BLE_NAME "IKEA_BLE_002"
+// #define BLE_NAME "IKEA_BLE_003"
+
+// BLE UUIDs for Nordic UART Service (NUS)
+#define SERVICE_UUID "6E400001-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_RX "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
+#define CHARACTERISTIC_UUID_TX "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
 
 /***********************************************************************************************/
 // Define pins for RX and TX
 #define RXD2 16 // GPIO16 as RX
 #define TXD2 17 // GPIO17 as TX (not used but must be defined)
 
-#define LED_BUILTIN 2 // Blue LED on ESP32 indicates data is received from IKEA sensor
+#define SIMULATION 1
 
 // UART2 communication with IKEA sensor
 HardwareSerial ikeaSerial(2);
@@ -62,8 +75,53 @@ HardwareSerial ikeaSerial(2);
 uint8_t serialRxBuf[20];
 uint8_t rxBufIdx = 0;
 
-// Bluetooth
-BluetoothSerial ESP_BT; // Init Bluetooth class
+// BLE variables
+BLEServer *pServer = NULL;
+BLECharacteristic *pTxCharacteristic;
+bool deviceConnected = false;
+bool oldDeviceConnected = false;
+
+// Simulation variables
+#if SIMULATION == 1
+int simulationCounter = 1;
+unsigned long lastSimulationTime = 0;
+const unsigned long simulationInterval = 2000; // Send data every 2 seconds
+#endif
+
+// BLE Server Callbacks
+class MyServerCallbacks : public BLEServerCallbacks
+{
+    void onConnect(BLEServer *pServer)
+    {
+        deviceConnected = true;
+        Serial.println("BLE Client connected");
+    };
+
+    void onDisconnect(BLEServer *pServer)
+    {
+        deviceConnected = false;
+        Serial.println("BLE Client disconnected");
+    }
+};
+
+// BLE Characteristic Callbacks (for receiving data from client)
+class MyCallbacks : public BLECharacteristicCallbacks
+{
+    void onWrite(BLECharacteristic *pCharacteristic)
+    {
+        std::string rxValue = pCharacteristic->getValue();
+
+        if (rxValue.length() > 0)
+        {
+            Serial.print("BLE Received: ");
+            for (int i = 0; i < rxValue.length(); i++)
+            {
+                Serial.print(rxValue[i]);
+            }
+            Serial.println();
+        }
+    }
+};
 
 /*******************************************************************/
 void clearRxBuf()
@@ -75,10 +133,14 @@ void clearRxBuf()
 /*************************** Setup ************************************/
 void setup()
 {
-    pinMode(LED_BUILTIN, OUTPUT);
     Serial.begin(115200);
     delay(500); // Give time to switch USB from programming to Serial Monitor
 
+#if SIMULATION == 1
+    Serial.println("*** SIMULATION MODE ACTIVE ***");
+    Serial.println("Sending test values: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5...");
+#else
+    Serial.println("*** REAL SENSOR MODE ***");
     // Initialize serial communication with IKEA Vindriktning
     ikeaSerial.begin(9600, SERIAL_8N1, RXD2, TXD2);
 
@@ -90,12 +152,46 @@ void setup()
     {
         Serial.println("+++ UART2 to IKEA sensor initialized");
     }
+#endif
 
-    // Initialize Bluetooth
-    ESP_BT.begin(BT_NAME);
-    Serial.print("+++ Bluetooth initialized as *** ");
-    Serial.print(BT_NAME);
+    // Initialize BLE
+    BLEDevice::init(BLE_NAME);
+
+    // Create BLE Server
+    pServer = BLEDevice::createServer();
+    pServer->setCallbacks(new MyServerCallbacks());
+
+    // Create BLE Service
+    BLEService *pService = pServer->createService(SERVICE_UUID);
+
+    // Create BLE Characteristic for TX (ESP32 -> Client)
+    pTxCharacteristic = pService->createCharacteristic(
+        CHARACTERISTIC_UUID_TX,
+        BLECharacteristic::PROPERTY_NOTIFY);
+
+    pTxCharacteristic->addDescriptor(new BLE2902());
+
+    // Create BLE Characteristic for RX (Client -> ESP32)
+    BLECharacteristic *pRxCharacteristic = pService->createCharacteristic(
+        CHARACTERISTIC_UUID_RX,
+        BLECharacteristic::PROPERTY_WRITE);
+
+    pRxCharacteristic->setCallbacks(new MyCallbacks());
+
+    // Start the service
+    pService->start();
+
+    // Start advertising
+    BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+    pAdvertising->addServiceUUID(SERVICE_UUID);
+    pAdvertising->setScanResponse(false);
+    pAdvertising->setMinPreferred(0x0); // set value to 0x00 to not advertise this parameter
+    BLEDevice::startAdvertising();
+
+    Serial.print("+++ BLE initialized as *** ");
+    Serial.print(BLE_NAME);
     Serial.println(" ***");
+    Serial.println("BLE device is now advertising...");
 
     clearRxBuf();
     Serial.println("Waiting for sensor ...");
@@ -104,14 +200,70 @@ void setup()
 /*************************** Loop ************************************/
 void loop()
 {
-    digitalWrite(LED_BUILTIN, LOW); // LED off while waiting
+    // Handle BLE connection changes
+    if (!deviceConnected && oldDeviceConnected)
+    {
+        delay(500);                  // give the bluetooth stack the chance to get things ready
+        pServer->startAdvertising(); // restart advertising
+        Serial.println("Start advertising");
+        oldDeviceConnected = deviceConnected;
+    }
+
+    if (deviceConnected && !oldDeviceConnected)
+    {
+        oldDeviceConnected = deviceConnected;
+    }
+
+#if SIMULATION == 1
+    // *** SIMULATION MODE ***
+
+    // Check if it's time to send next simulation value
+    if (millis() - lastSimulationTime >= simulationInterval)
+    {
+        lastSimulationTime = millis();
+
+        // Generate simulation value: 1, 2, 3, 4, 5, 1, 2, 3, 4, 5, ...
+        int ikeaValue = simulationCounter;
+        simulationCounter++;
+        if (simulationCounter > 300)
+        {
+            simulationCounter = 1;
+        }
+
+        // Send value to Serial Monitor
+        Serial.print("SIMULATION: ");
+        Serial.println(ikeaValue);
+
+        // Send value via BLE with leading '#' (only if client is connected)
+        if (deviceConnected)
+        {
+            String sendString = "#";
+            sendString.concat(String(ikeaValue));
+
+            pTxCharacteristic->setValue(sendString.c_str());
+            pTxCharacteristic->notify();
+
+            Serial.print("BLE sent: ");
+            Serial.println(sendString);
+        }
+        else
+        {
+            Serial.println("No BLE client connected");
+        }
+
+        delay(100); // Brief delay
+    }
+
+    delay(100); // Small delay in simulation mode
+
+#else
+    // *** REAL SENSOR MODE ***
 
     while (!ikeaSerial.available())
     {
         // Wait for data from IKEA sensor
+        delay(10); // Small delay to prevent tight loop
     }
-
-    digitalWrite(LED_BUILTIN, HIGH); // LED on when data starts arriving
 
     // Read 20-byte data packet from sensor
     while (ikeaSerial.available())
@@ -141,10 +293,22 @@ void loop()
         // Send value to Serial Monitor
         Serial.println(ikeaValue);
 
-        // Send value via Bluetooth with leading '#'
-        String sendString = "#";
-        sendString.concat(String(ikeaValue));
-        ESP_BT.println(sendString);
+        // Send value via BLE with leading '#' (only if client is connected)
+        if (deviceConnected)
+        {
+            String sendString = "#";
+            sendString.concat(String(ikeaValue));
+
+            pTxCharacteristic->setValue(sendString.c_str());
+            pTxCharacteristic->notify();
+
+            Serial.print("BLE sent: ");
+            Serial.println(sendString);
+        }
+        else
+        {
+            Serial.println("No BLE client connected");
+        }
 
         // Debug: print full raw data
         /*
@@ -156,4 +320,5 @@ void loop()
     }
 
     clearRxBuf();
+#endif
 }
