@@ -110,8 +110,7 @@ Hinweis: Bei mir hat die Registrierung bei der Installation des 'MIT App Invento
 
 Zunächst wird die aia Datei von Github auf den Laptop heruntergeladen.  
 
-Die Datei findet sich auf GitHub unter [aia Datei](SmartphoneApp\IKEA_VIND_Monitor_2025.aia)  
-In Github **IKEA_VIND_Monitor.aia** Klicken.  Dann rechts auf **Download** klicken und die Datei auf den Windows Computer laden.
+Die Datei **IKEA_VIND_Monitor_2025.aia** findet sich im Verzeichnis SmartphoneApp. Mit Rechtsklick auf die Datei kann sie auf den Windows Computer geladen werden.
 
 
 Den **MIT App Inventor** im Browser starten.  
