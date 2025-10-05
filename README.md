@@ -87,7 +87,7 @@ Die App zeigt die Messwerte aus dem ESP32 als String (mit führendem #-Zeichen)
 
 Die App wird auf dem Handy installiert durch Scannen dieses  QR Codes
 
-![Downlad apk](images/QR_Download_apk.png)
+<img src="images/QR_Download_apk.png" alt="Download apk" width="89">
 
 Die App zeigt Messwerte grafisch in einer einfachen XY Darstellung. Im Beispiel wurden Kerzen ausgeblasen. Zunächst unmittelbar neben dem Sensor, dann im Abstand von 30 Zentimetern.  
 
